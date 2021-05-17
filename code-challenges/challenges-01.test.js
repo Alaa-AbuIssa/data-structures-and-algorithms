@@ -7,12 +7,18 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 1', () => {
+//   test('It should return an array with 1 added to each value of the original array', () => {
+//     expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
+//   });
+// });
 
 const addOne = (arr) => {
   // Solution code here...
   let newArr=[];
 arr.forEach(num => {
-newArr.push(num+1) ;});
+newArr.push(num+1) ;}
+);
 return newArr;
 
 };
@@ -24,9 +30,20 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 2', () => {
+//   test('It should return an array with an exclamation point added to each value of the original array', () => {
+//     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
+//   });
+// });
 
 const addExclamation = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.forEach(str => {
+    newArr.push(str+'!')}
+    );
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,9 +53,20 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 3', () => {
+//   test('It should return an array of uppercase strings', () => {
+//     expect(allUpperCase(['hi', 'how', 'are', 'you'])).toStrictEqual(['HI', 'HOW', 'ARE', 'YOU']);
+//   });
+// });
+
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.forEach(str => {
+    newArr.push(str.toUpperCase())}
+    );
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,12 +79,26 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
+// describe('Testing challenge 4', () => {
+//   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
+//     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
+//   });
+// });
+
+
 const greeting = (word) => {
   // Solution code here...
+  return word.toUpperCase()+'!'
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
+  let newArr=[];
+  words.forEach(val=>{
+    let newItem= callback(val);
+    newArr.push(newItem);
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,15 +116,29 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 5', () => {
+//   test('It should add the number 8 to the array five times', () => {
+//     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
+//     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
+//   });
+// });
+
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-};
 
+  for (let i=1 ; i <= times ; i++)
+  {
+
+    callback(arr,num);
+  }
+return arr ;
+};
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
