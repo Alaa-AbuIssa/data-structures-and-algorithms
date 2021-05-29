@@ -59,23 +59,6 @@
 // //   });
 // // });
 
-
-// const allUpperCase = (arr) => {
-//   // Solution code here...
-//   let newArr=[];
-//   arr.forEach(str => {
-//     newArr.push(str.toUpperCase())}
-//     );
-//   return newArr;
-// };
-
-// /* ------------------------------------------------------------------------------------------------
-// CHALLENGE 4
-
-// Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
-
-// Then, write a function named `speaker` that takes in an array of strings and a callback function.
-
 // Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 // ------------------------------------------------------------------------------------------------ */
 
@@ -86,25 +69,10 @@
 // // });
 
 
-// const greeting = (word) => {
-//   // Solution code here...
-//   return word.toUpperCase()+'!'
-// };
-
-// const speaker = (words, callback) => {
-//   // Solution code here...
-//   let newArr=[];
-//   words.forEach(val=>{
-//     let newItem= callback(val);
-//     newArr.push(newItem);
-//   })
-//   return newArr;
-// };
-
 // /* ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
 
-// Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
+
 
 // Then, write a function named addNumbers that takes in four arguments:
 //   - A number to be added to an array
@@ -112,67 +80,7 @@
 //   - The number of times the number should be added
 //   - A callback function to use to add the numbers to the array (Hint: you already defined it)
 
-// Within the addNumbers function, invoke the callback function as many times as necessary, based on the third argument of the addNumbers function.
 
-// Return the modified array.
-// ------------------------------------------------------------------------------------------------ */
-// // describe('Testing challenge 5', () => {
-// //   test('It should add the number 8 to the array five times', () => {
-// //     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
-// //     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
-// //   });
-// // });
-
-
-// const addValues = (arr, value) => {
-//   // Solution code here...
-//   arr.push(value);
-// };
-
-// const addNumbers = (num, arr, times, callback) => {
-//   // Solution code here...
-
-//   for (let i=1 ; i <= times ; i++)
-//   {
-
-//     callback(arr,num);
-//   }
-// return arr ;
-// };
-
-// /* -------------------------------------------------------------------------------------------------
-
-// CHALLENGE 6
-
-// Write a function named createList that takes in an array of the current store intentory.
-
-// The inventory is formatted like this:
-// [
-//   { name: 'apples', available: true },
-//   { name: 'pears', available: true },
-//   { name: 'oranges', available: false },
-//   { name: 'bananas', available: true },
-//   { name: 'blueberries', available: false }
-// ]
-
-// This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
-// ------------------------------------------------------------------------------------------------ */
-
-
-// // describe('Testing challenge 6', () => {
-// //   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
-
-// const createList = (availableItems) => {
-//   // Solution code here...
-//   let list=[];
-//   availableItems.forEach(item => {
-//     if (item.available=== true)
-//     {
-// list.push(item.name);
-//     }
-
-//   })
-//   return list;
 // };
 
 // /* ------------------------------------------------------------------------------------------------
