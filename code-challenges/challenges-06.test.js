@@ -21,6 +21,7 @@ For example:
 
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
+
 // describe('Testing challenge 1', () => {
 //   test('It returns an array of names reversed', () => {
 //     expect(getNames([{name:'lloyd', age: 32, shoeSize: 12}, {name:'jamie', age:21, shoeSize: 8}])).toStrictEqual(['dyoll', 'eimaj']);
@@ -28,13 +29,10 @@ Returns: ['dyoll', 'eimaj'];
 //   });
 // });
 
-
-
 const getNames = (arr) => {
   // Solution code here...
   let names= arr.map(personName=>personName.name.split('').reverse().join(''));
   return names;
-
 
 };
 
@@ -44,6 +42,7 @@ CHALLENGE 2
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
+
 // describe('Testing challenge 2', () => {
 //   test('It should append without modifying the oiginal', () => {
 //     const a = 'This is my story.';
@@ -61,7 +60,6 @@ const appendTheEnd = (str) => {
   return modifiedString;
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -73,6 +71,7 @@ For example:
 const a = [1, 2, 3];
 appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
+
 ------------------------------------------------------------------------------------------------ */
 // describe('Testing challenge 3', () => {
 //   test('It should append by modifying the oiginal', () => {
@@ -104,6 +103,7 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
+
 // describe('Testing challenge 4', () => {
 //   test('It should add a property to an object', () => {
 //     const a = { fullName: 'Octavia Butler' };
@@ -119,6 +119,8 @@ const addBirthYearProperty = (obj, year) => {
   obj.yearBorn= year;
   console.log(obj.yearBorn);
 };
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
