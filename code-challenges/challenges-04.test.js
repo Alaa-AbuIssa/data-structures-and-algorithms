@@ -92,12 +92,7 @@
 // HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 // ------------------------------------------------------------------------------------------------ */
 
-// const sortBackwards = (arr) => {
-//   // Solution code here...
-// };
 
-// /* ------------------------------------------------------------------------------------------------
-// CHALLENGE 5
 
 // Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
 
@@ -110,10 +105,7 @@
 //   // Solution code here...
 // };
 
-// /* ------------------------------------------------------------------------------------------------
-// CHALLENGE 6
 
-// Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
 // Here is an example of the input:
 // [
