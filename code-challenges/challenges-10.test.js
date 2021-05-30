@@ -119,8 +119,20 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
+
 const grandTotal = (stores) => {
   // Solution code here...
+let totalSum=[];
+stores[0].forEach(hour=>totalSum.push(0));
+
+for (let i =0 ; i<stores.length;i++ )
+{
+  for (let j= 0 ; j<stores[i].length ;j++)
+  {
+    totalSum[j]=stores[i][j]+totalSum[j];
+  }
+}
+return totalSum;
 
 };
 
@@ -156,13 +168,26 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
-};
+  let formattedarray=[];
+  data.forEach((key,idx)=>formattedarray.push({
+    sales: `${key} cookies` ,
+    time: hours[idx],
+
+  }))
+  return formattedarray;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
+
+// describe('Testing challenge 6', () => {
+//   test('It should return the number 24', () => {
+//     expect(howManyTreats(errands)).toStrictEqual(24);
+//   });
+// });
 
 const errands = [
   {
@@ -181,8 +206,10 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
-};
 
+let treatsQuantity=errands[2].items[1].quantity;
+return treatsQuantity;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
