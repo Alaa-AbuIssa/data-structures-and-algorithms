@@ -97,6 +97,12 @@ CHALLENGE 5
 
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 5', () => {
+//   test('It should return an array continaing the names of the characters', () => {
+//     expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
+//     expect(returnNames(starWarsData).length).toStrictEqual(5);
+//   });
+// });
 
 let starWarsData = [{
   name: 'Luke Skywalker',
@@ -150,6 +156,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let names = arr.reduce((acc, c, idx) => {
+    acc[idx] = c.name;
+    return acc;
+  }, []);
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,9 +170,17 @@ Write a function named reversedString that takes in a string and returns a strin
 
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
+// describe('Testing challenge 6', () => {
+//   test('It should return the string with the characters in reverse order', () => {
+//     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
+//   });
+// });
 
 const reversedString = (str) => {
   // Solution code here...
+  let newStr = str.split('');
+  let reversedOrder = newStr.reduce((acc, c) => c + acc, '');
+  return reversedOrder;
 };
 
 /* ------------------------------------------------------------------------------------------------
