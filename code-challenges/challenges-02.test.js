@@ -98,6 +98,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let sqr= [];
+  arr.forEach(num => {
+sqr.push(Math.pow(2,num));
+  })
+ return sqr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,6 +113,12 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+
+let x =  arr.map(num => {
+return (Math.pow(2,num));
+
+  })
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
