@@ -23,7 +23,7 @@ const maxInArray = (arr) => {
   // Solution code here...
   const [] = arr;
 
-  let maximum =arr.reduce((acc, value) => Math.max(acc, value));
+  let maximum = arr.reduce((acc, value) => Math.max(acc, value));
   return maximum;
 };
 /* ------------------------------------------------------------------------------------------------
@@ -40,16 +40,16 @@ For example: (['name', 'duration', 'topics', 'finalExam']).
 //   });
 // });
 
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
 const getCourseKeys = (obj) => {
   // Solution code here...
-  let keysCourse=[];
-  for (let property in obj)
-  {
+  let keysCourse = [];
+  for (let property in obj) {
     keysCourse.push(property);
   }
   return keysCourse;
@@ -103,9 +103,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
-  let newData =[];
-  for (let property in obj)
-  {
+  let newData = [];
+  for (let property in obj) {
     newData.push(`${property}: ${obj[property]}`)
   }
   return newData;
@@ -171,7 +170,7 @@ const characters = [
 const getHouses = (arr) => {
   let housesName = [];
   // Solution code here...
-  arr.forEach(houseObject =>{
+  arr.forEach(houseObject => {
     housesName.push(houseObject.house);
   })
   return housesName;

@@ -23,4 +23,5 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |    Challenge 1         |  [Array-reverse](array-reverse/array-reverse.js)      |
 |    Challenge 2         |  [Array-insert-shift](array-insert-shift/README.md)   |
 |    Challenge 3         |  [Array-binary-search](array-binary-search/README.md) |
+|    Challenge 4         |  [Linked List Implementation](linked-list/README.md)  |
 
