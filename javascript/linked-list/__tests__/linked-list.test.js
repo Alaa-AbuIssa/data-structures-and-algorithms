@@ -68,7 +68,133 @@ describe('Linked List', () => {
     expect(ll.toString()).toBe('{d} -> {c} -> NULL -> {false} -> {a}');
   });
 
+  it(' Add a node to the end ',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+
+    expect(ll.head.next.value).toBe('two');
+  });
+
+  it('Add multiple nodes ',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+
+    expect(ll.head.next.next.next.value).toBe('four');
+  });
+  it('Insert in the middle',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertBefore('alaa','three');
+
+    expect(ll.head.next.next.value).toBe('alaa');
+  });
+  it('Insert before first',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('fourth');
+    ll.insertBefore('alaa','one');
+
+    expect(ll.head.value).toBe('alaa');
+  });
+  it('Insert after a value',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('alaa','three');
+
+    expect(ll.head.next.next.next.value).toBe('alaa');
+  });
+  it('Insert after last',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('alaa','four');
+
+    expect(ll.head.next.next.next.next.value).toBe('alaa');
+  });
 
 
+  //// linked-list-kth !
+  describe('Kth from end', () => {
+
+    it('k is greater than the length of the linked list',()=>{
+      const ll = new LinkedList();
+
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('alaa','four');
+
+      expect(ll.kthFromEnd(9)).toBe('Exception');
+    });
+
+    it('k and the length are the same',()=>{
+      const ll = new LinkedList();
+
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('alaa','four');
+
+      expect(ll.kthFromEnd(5)).toBe('Exception');
+    });
+
+    it('K is not a positive integer',()=>{
+      const ll = new LinkedList();
+
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('alaa','four');
+
+      expect(ll.kthFromEnd(-5)).toBe('Exception');
+    });
+
+    it('Linked list of size 1',()=>{
+      const ll = new LinkedList();
+
+      ll.insert('one');
+
+      expect(ll.kthFromEnd(1)).toBe('Exception');
+      expect(ll.kthFromEnd(0)).toBe('one');
+      expect(ll.kthFromEnd(-1)).toBe('Exception');
+    });
+
+    it('Happy Path',()=>{
+      const ll = new LinkedList();
+
+      ll.append('one');
+      ll.append('two');
+      ll.append('three');
+      ll.append('four');
+      ll.insertAfter('alaa','four');
+
+      expect(ll.kthFromEnd(2)).toBe('three');
+
+    });
+
+  });
 
 });
