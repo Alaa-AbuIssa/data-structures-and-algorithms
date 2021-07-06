@@ -68,7 +68,73 @@ describe('Linked List', () => {
     expect(ll.toString()).toBe('{d} -> {c} -> NULL -> {false} -> {a}');
   });
 
+  it(' Add a node to the end ',()=>{
+    const ll = new LinkedList();
 
+    ll.append('one');
+    ll.append('two');
+
+    expect(ll.head.next.value).toBe('two');
+  });
+
+  it('Add multiple nodes ',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+
+    expect(ll.head.next.next.next.value).toBe('four');
+  });
+  it('Insert in the middle',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertBefore('alaa','three');
+
+    expect(ll.head.next.next.value).toBe('alaa');
+  });
+
+  it('Insert before first',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('fourth');
+    ll.insertBefore('alaa','one');
+
+    expect(ll.head.value).toBe('alaa');
+  });
+
+  it('Insert after a value',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('alaa','three');
+
+    expect(ll.head.next.next.next.value).toBe('alaa');
+  });
+
+  it('Insert after last',()=>{
+    const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+    ll.insertAfter('alaa','four');
+
+    expect(ll.head.next.next.next.next.value).toBe('alaa');
+  });
 
 
 });
+
