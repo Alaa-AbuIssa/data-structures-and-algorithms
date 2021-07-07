@@ -148,8 +148,7 @@ class LinkedList {
   }
 }
 
-/// zipLists
-
+/// zipLists...
 function zipLists(list1,list2){
   let pointer1 = list1.head;
   let pointer2 = list2.head;
