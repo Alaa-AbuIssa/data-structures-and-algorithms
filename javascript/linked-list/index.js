@@ -7,6 +7,8 @@ class Node {
   }
 }
 
+
+/// linked list
 class LinkedList {
   constructor() {
     this.head = null;
@@ -126,6 +128,45 @@ class LinkedList {
       pointer = pointer.next;
     }
   }
+
+
+
+  /// kth
+  kthFromEnd(k){
+
+    let pointer=this.head;
+    let array = [];
+
+   while(pointer){
+     array.push(pointer.value);
+     pointer = pointer.next;
+   }
+  if (array.length <= k || k < 0){
+    return 'Exception';
+  } else {
+    return array[array.length-1-k]
+  }
+  }
 }
 
-module.exports = LinkedList;
+/// zipLists
+function zipLists(list1,list2){
+  let pointer1 = list1.head;
+  let pointer2 = list2.head;
+  let list3 = new LinkedList();
+
+  while(pointer1 || pointer2){
+    if(pointer1 != null){
+      list3.append(pointer1.value);
+    pointer1 = pointer1.next;
+    }
+    if(pointer2 != null){
+      list3.append(pointer2.value);
+    pointer2 = pointer2.next;
+    }
+  }
+  return list3.toString();
+
+}
+
+module.exports = {LinkedList, zipLists};
