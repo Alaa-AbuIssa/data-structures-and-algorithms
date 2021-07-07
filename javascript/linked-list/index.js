@@ -130,6 +130,7 @@ class LinkedList {
   }
 
 
+
   /// kth
   kthFromEnd(k){
 
@@ -165,6 +166,7 @@ function zipLists(list1,list2){
     }
   }
   return list3.toString();
+
 }
 
 module.exports = {LinkedList, zipLists};

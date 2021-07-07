@@ -112,6 +112,10 @@ describe('Linked List', () => {
     expect(ll.head.value).toBe('alaa');
   });
 
+
+  it('Insert after a value',()=>{
+
+
   it('Insert after a value',()=>{
     const ll = new LinkedList();
 
@@ -125,7 +129,27 @@ describe('Linked List', () => {
   });
 
   it('Insert after last',()=>{
+
     const ll = new LinkedList();
+
+    ll.append('one');
+    ll.append('two');
+    ll.append('three');
+    ll.append('four');
+
+    ll.insertAfter('alaa','three');
+
+    expect(ll.head.next.next.next.value).toBe('alaa');
+  });
+
+  it('Insert after last',()=>{
+    const ll = new LinkedList();
+
+    ll.insertAfter('alaa','four');
+
+    expect(ll.head.next.next.next.next.value).toBe('alaa');
+  });
+
 
     ll.append('one');
     ll.append('two');
@@ -212,3 +236,4 @@ describe('Linked List', () => {
   });
 
 });
+
