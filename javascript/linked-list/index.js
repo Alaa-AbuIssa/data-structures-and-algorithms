@@ -7,6 +7,8 @@ class Node {
   }
 }
 
+
+/// linked list
 class LinkedList {
   constructor() {
     this.head = null;
@@ -128,8 +130,7 @@ class LinkedList {
   }
 
 
-  /////linked-list-kth !
-
+  /// kth
   kthFromEnd(k){
 
     let pointer=this.head;
@@ -147,4 +148,23 @@ class LinkedList {
   }
 }
 
-module.exports = LinkedList;
+/// zipLists
+function zipLists(list1,list2){
+  let pointer1 = list1.head;
+  let pointer2 = list2.head;
+  let list3 = new LinkedList();
+
+  while(pointer1 || pointer2){
+    if(pointer1 != null){
+      list3.append(pointer1.value);
+    pointer1 = pointer1.next;
+    }
+    if(pointer2 != null){
+      list3.append(pointer2.value);
+    pointer2 = pointer2.next;
+    }
+  }
+  return list3.toString();
+}
+
+module.exports = {LinkedList, zipLists};

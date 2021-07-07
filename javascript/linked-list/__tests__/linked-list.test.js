@@ -1,7 +1,8 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const LinkedList = require('../index').LinkedList;
+const zipLists = require('../index').zipLists;
 
 describe('Linked List', () => {
 
@@ -56,7 +57,7 @@ describe('Linked List', () => {
     expect(ll.includes('h')).toBe(false);
   });
 
-  it('Test Reading All Node Values', () => {
+  it('Test Reading All Node Values',()=>{
     let ll = new LinkedList();
 
     ll.insert('a');
@@ -68,7 +69,7 @@ describe('Linked List', () => {
     expect(ll.toString()).toBe('{d} -> {c} -> NULL -> {false} -> {a}');
   });
 
-  it(' Add a node to the end ', () => {
+  it(' Add a node to the end ',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
@@ -77,7 +78,7 @@ describe('Linked List', () => {
     expect(ll.head.next.value).toBe('two');
   });
 
-  it('Add multiple nodes ', () => {
+  it('Add multiple nodes ',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
@@ -87,93 +88,93 @@ describe('Linked List', () => {
 
     expect(ll.head.next.next.next.value).toBe('four');
   });
-  it('Insert in the middle', () => {
+  it('Insert in the middle',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
     ll.append('two');
     ll.append('three');
     ll.append('four');
-    ll.insertBefore('alaa', 'three');
+    ll.insertBefore('alaa','three');
 
     expect(ll.head.next.next.value).toBe('alaa');
   });
-  it('Insert before first', () => {
+
+  it('Insert before first',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
     ll.append('two');
     ll.append('three');
     ll.append('fourth');
-    ll.insertBefore('alaa', 'one');
+    ll.insertBefore('alaa','one');
 
     expect(ll.head.value).toBe('alaa');
   });
-  it('Insert after a value', () => {
+
+  it('Insert after a value',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
     ll.append('two');
     ll.append('three');
     ll.append('four');
-    ll.insertAfter('alaa', 'three');
+    ll.insertAfter('alaa','three');
 
     expect(ll.head.next.next.next.value).toBe('alaa');
   });
-  it('Insert after last', () => {
+
+  it('Insert after last',()=>{
     const ll = new LinkedList();
 
     ll.append('one');
     ll.append('two');
     ll.append('three');
     ll.append('four');
-    ll.insertAfter('alaa', 'four');
+    ll.insertAfter('alaa','four');
 
     expect(ll.head.next.next.next.next.value).toBe('alaa');
   });
 
-
-  //// linked-list-kth !!
   describe('Kth from end', () => {
 
-    it('k is greater than the length of the linked list', () => {
+    it('k is greater than the length of the linked list',()=>{
       const ll = new LinkedList();
 
       ll.append('one');
       ll.append('two');
       ll.append('three');
       ll.append('four');
-      ll.insertAfter('alaa', 'four');
+      ll.insertAfter('alaa','four');
 
       expect(ll.kthFromEnd(9)).toBe('Exception');
     });
 
-    it('k and the length are the same', () => {
+    it('k and the length are the same',()=>{
       const ll = new LinkedList();
 
       ll.append('one');
       ll.append('two');
       ll.append('three');
       ll.append('four');
-      ll.insertAfter('alaa', 'four');
-
+      ll.insertAfter('alaa','four');
 
       expect(ll.kthFromEnd(5)).toBe('Exception');
     });
 
-    it('K is not a positive integer', () => {
+    it('K is not a positive integer',()=>{
       const ll = new LinkedList();
 
       ll.append('one');
       ll.append('two');
       ll.append('three');
       ll.append('four');
-      ll.insertAfter('alaa', 'four');
+      ll.insertAfter('alaa','four');
 
       expect(ll.kthFromEnd(-5)).toBe('Exception');
     });
 
-    it('Linked list of size 1', () => {
+    it('Linked list of size 1',()=>{
       const ll = new LinkedList();
 
       ll.insert('one');
@@ -183,19 +184,31 @@ describe('Linked List', () => {
       expect(ll.kthFromEnd(-1)).toBe('Exception');
     });
 
-    it('Happy Path', () => {
+    it('Happy Path',()=>{
       const ll = new LinkedList();
 
       ll.append('one');
       ll.append('two');
       ll.append('three');
       ll.append('four');
-      ll.insertAfter('alaa', 'four');
+      ll.insertAfter('alaa','four');
 
       expect(ll.kthFromEnd(2)).toBe('three');
 
     });
 
+  });
+
+  describe('Zip linked lists',()=>{
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    for(let i=0;i<5;i++){
+      list1.append(i);
+    }
+    for(let i=0;i<5;i++){
+      list1.append(i+10);
+    }
+    expect(zipLists(list1,list2)).toBe('{0} -> {1} -> {2} -> {3} -> {4} -> {10} -> {11} -> {12} -> {13} -> {14}');
   });
 
 });
