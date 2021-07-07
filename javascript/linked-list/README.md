@@ -32,4 +32,4 @@ insert after arguments: value, new value adds a new node with the given new valu
 
 ## Whiteboard Process
 
-<img src="./challenge6.png" />
+<img src="./linked-list/linked-list-zip.png" />
