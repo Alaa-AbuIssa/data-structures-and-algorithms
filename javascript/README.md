@@ -14,9 +14,31 @@ Linked List Create a Linked List class Within your Linked List class, include a 
 
 * insert before arguments: value, new value adds a new node with the given new value immediately before the first node that has the value specified
 
-* insert after arguments: value, new value adds a new node with the given new value immediately after the first node that has the value specified
+## Stacks and Queues
+create stack and Queue classes
 
-* kth from end argument: a number, k, as a parameter. Return the node’s value that is k places from the tail of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.....
+## Challenge
+how to apply the approach of stack and Queue
+
+## Approach & Efficiency
+Big O
+
+Time : O(n)
+
+space : O(n)
+
+## API
+* push: takes any value as an argument and adds a new node with that value to the top of the stack class.
+
+* pop :takes off the top value of the stack class,
+
+* dequeue: removes the node from the top of the class, and returns the node’s value.
+
+* enqueue: takes any value as an argument and adds a new node with that value to the back of the stack class.
+
+* peek: returns the value of the node located in the front of Queue/top of the Stack without Changing
+
+* isEmpty: returns a boolean indicating whether or not the class is empty
 
 ## Whiteboard Process
-<img src="./linked-list/challenge8m.png" />
+<img src="./stack-and-queue/cc 10.png" />
