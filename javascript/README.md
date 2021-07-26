@@ -41,4 +41,4 @@ space : O(n)
 * isEmpty: returns a boolean indicating whether or not the class is empty
 
 ## Whiteboard Process
-<img src="./stack-and-queue/cc12.png" />
+<img src="./stack-and-queue/cc13.png" />
