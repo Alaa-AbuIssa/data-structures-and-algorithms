@@ -15,39 +15,61 @@ class BinaryTree {
 
   // pre Order
   preOrder() {
+    //Root - Left - Right.
     const result = [];
-    const _move = (node) => {
+    const traverse = (node) => {
       result.push(node.value);
-      if (node.left) _move(node.left);
-      if (node.right) _move(node.right);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
     };
-    _move(this.root);
+    traverse(this.root);
+    return result;
+  }
+
+//in order
+  inOrder() {
+    //left - Root - Right.
+    const result = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      result.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
     return result;
   }
 
   /// post order
   postOrder() {
+    //Root - Left - Right.
     const result = [];
-    const _move = (node) => {
-      if (node.left) _move(node.left);
-      if (node.right) _move(node.right);
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
       result.push(node.value);
     };
-    _move(this.root);
+    traverse(this.root);
     return result;
   }
 
-  //in order
-  inOrder() {
-    const result = [];
-    const _move = (node) => {
-      if (node.left) _move(node.left);
-      result.push(node.value);
-      if (node.right) _move(node.right);
-    };
-    _move(this.root);
-    return result;
-  }
+  // find maximum function
+  findMaximumValue() {
+
+  // check if there is no root
+    if (!this.root) {
+        return ' there is no root';
+    }
+    let array = this.postOrder();
+    let maxValue = this.root.value;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > maxValue)
+        maxValue = array[i];
+
+    }
+    return maxValue;
+}
+
 }
 
 
@@ -57,7 +79,7 @@ class BinarySearchTree {
       this.root = root;
   }
 
-  // add
+  // add a value to the tree
   add(value) {
       let newNode = new Node(value)
       const binaryAdd = (node, newNode) => {
@@ -83,7 +105,7 @@ class BinarySearchTree {
       }
   }
 
-  // contains
+  // return true if the tree contain the value.
   contains(value) {
 
       const search = (value, node = null) => {
