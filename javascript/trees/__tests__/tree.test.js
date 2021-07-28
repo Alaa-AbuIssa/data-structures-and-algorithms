@@ -1,10 +1,8 @@
-// require the classes
-let { BinaryTree, Node } = require('../trees')
+let { BinaryTree, Node, BinarySearchTree } = require('../trees')
 describe('tree test', () => {
     let tree;
-    let one;
     beforeAll(() => {
-        one = new Node(1);
+        const one = new Node(1);
         const two = new Node(2);
         const three = new Node(3);
         const four = new Node(4);
@@ -56,10 +54,6 @@ describe('tree test', () => {
     it('Can successfully return the max value correctly', () => {
         const max = tree.findMaximumValue();
         expect(max).toEqual(8);
-    });
-    it('return breadthFirst', () => {
-        const expected = [1, 2, 3, 4, 5, 6, 7, 8];
-        expect(tree.breadthFirst(one)).toEqual(expected);
     });
 
 
