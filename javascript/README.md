@@ -15,5 +15,19 @@ postOrder: Root - Left - Right.
 add method: add a value to the tree
 contains method: return true if the tree contain the value.
 
+## FindMaxValue
+### Challenge Summary
+Find the max value in the tree
+- Challenge Description
+Write an instance method called find-maximum-value that return the maximum value stored in the tree.
 
+### Approach & Efficiency
+Create a findMaximum Value Function -check if we have a value in the root
+use postOrder method to get the values from the tree
+for loob to find the ma value after check
+return the max value
+- Big O:
+- Time: O(n)
+- space: O(n)
 
+<img src="./trees/cc16.png" />

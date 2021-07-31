@@ -57,4 +57,20 @@ describe('tree test', () => {
     });
 
 
+    /// teting for cc17
+
+    describe(' First Test', ()=>{
+      let newTree= new BinaryTree;
+
+      newTree.root=new Node(0);
+      newTree.root.left=new Node(1);
+      newTree.root.right=new Node(8);
+      newTree.root.left.left=new Node(5);
+      newTree.root.left.right=new Node(9);
+      newTree.root.right.left=new Node(10);
+      newTree.root.right.right=new Node(6);
+    })
+    it('find first Breadth', () => {
+      expect(tree.breadthFirst()).toEqual([0,1,8,5,9,10,6]);
+  });
 })

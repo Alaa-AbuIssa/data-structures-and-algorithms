@@ -70,6 +70,31 @@ class BinaryTree {
     return maxValue;
 }
 
+breadthFirst() {
+
+  //define pointer and queue and array to hold the tree nodes
+  let pointer = null;
+  let queue = [];
+  let treesArray = [];
+
+  queue.unshift(this.root);
+
+  // looping over tree nodes
+  while (queue.length) {
+    pointer = queue.pop();
+    treesArray.push(pointer.value);
+
+    if (pointer.left) {
+      queue.unshift(pointer.left);
+    }
+    if (pointer.right) {
+      queue.unshift(pointer.right);
+    }
+  }
+  return treesArray;
+}
+
+
 }
 
 
@@ -124,6 +149,9 @@ class BinarySearchTree {
           return search(value, this.root)
       }
   }
+
+  //code challenge 17
+
 
 }
 
