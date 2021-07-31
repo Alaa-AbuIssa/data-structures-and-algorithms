@@ -74,3 +74,29 @@ describe('tree test', () => {
       expect(tree.breadthFirst()).toEqual([0,1,8,5,9,10,6]);
   });
 })
+
+  // test code 18. with some helps
+
+  describe('Test 18', () => {
+    it('fizzBuzz', () => {
+
+        let tree = new BinaryTree();
+
+        tree.root = new Node(1);
+        tree.root.left = new Node(7);
+        tree.root.left.left = new Node(1);
+        tree.root.left.right = new Node(6);
+        tree.root.left.right.left = new Node(5);
+        tree.root.left.right.right = new Node(11);
+        tree.root.right = new Node(5);
+        tree.root.right.right = new Node(9);
+        tree.root.right.right.left = new Node(15);
+
+        let fizz = tree.fizzBuzzFunc(tree);
+        let firstFizz= fizz.breadthFirst()
+
+        expect(firstFizz).toEqual(['1','7','Buzz','1','Fizz','Fizz','Buzz','11','FizzBuzz']);
+      });
+});
+
+
