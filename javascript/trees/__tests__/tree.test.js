@@ -59,18 +59,21 @@ describe('tree test', () => {
 
     /// teting for cc17
 
-    describe(' First Test', ()=>{
-      let newTree= new BinaryTree;
+    describe('Test 17', () => {
+        let tree = new BinaryTree();
 
-      newTree.root=new Node(0);
-      newTree.root.left=new Node(1);
-      newTree.root.right=new Node(8);
-      newTree.root.left.left=new Node(5);
-      newTree.root.left.right=new Node(9);
-      newTree.root.right.left=new Node(10);
-      newTree.root.right.right=new Node(6);
-    })
-    it('find first Breadth', () => {
-      expect(tree.breadthFirst()).toEqual([0,1,8,5,9,10,6]);
-  });
-})
+        tree.root = new Node(0);
+        tree.root.left = new Node(5);
+        tree.root.right = new Node(6);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(7);
+        tree.root.right.left = new Node(11);
+        tree.root.right.right = new Node(10);
+        tree.root.right.right.left = new Node(8);
+        tree.root.right.right.right = new Node(6);
+
+        it('find a maximum value in a tree', () => {
+            expect(tree.breadthFirst()).toEqual([0,5,6,4,7,11,10,8,6]);
+        });
+    });
+  })
