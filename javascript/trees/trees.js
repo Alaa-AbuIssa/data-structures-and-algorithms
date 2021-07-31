@@ -70,6 +70,7 @@ class BinaryTree {
     return maxValue;
 }
 
+// cc 17
 breadthFirst() {
 
   //define pointer and queue and array to hold the tree nodes
@@ -93,7 +94,34 @@ breadthFirst() {
   }
   return treesArray;
 }
+  // code Challenge 18
+  fizzBuzzFunc(tree) {
+    // define pointer and another tree
+    let requiredTree = tree
+    let pointer = requiredTree.root;
+    let queue = [];
 
+    queue.push(pointer);
+
+    while (queue.length) {
+      pointer = queue.pop();
+      if (pointer.value % 3 === 0 && pointer.value % 5 === 0 && pointer !== null) {
+        pointer.value = 'FizzBuzz';
+      }
+      else if (pointer.value % 3 === 0 && pointer !== null) {
+        pointer.value = 'Fizz';
+      }
+      else if (pointer.value % 5 === 0 && pointer !== null) {
+        pointer.value = 'Buzz';
+      }
+      else if(pointer.value % 3 !== 0 && pointer.value % 5 !== 0 && pointer !== null) {
+        pointer.value = `${pointer.value}`;
+      }
+      if (pointer.left) queue.push(pointer.left);
+      if (pointer.right) queue.push(pointer.right);
+    }
+    return requiredTree;
+  }
 
 }
 
@@ -150,7 +178,6 @@ class BinarySearchTree {
       }
   }
 
-  //code challenge 17
 
 
 }
