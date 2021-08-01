@@ -2,32 +2,21 @@
 A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree can have only 2 children, we typically name them the left and right child
 
 ## Challenge
-* Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
-* Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
 
 ## Approach & Efficiency
-add method: adding a value to the tree after checking the root.
-contains method: return true if the tree contain the value after searching.
+Used recursion to traverse through the tree with time complexity of n, Used Iterative approach to add to binary search tree with O(n), Used Iterative to check if element exists with O(n).
+
 ## API
-preOrder: Root - Left - Right.
-inOrder : left - Root - Right.
-postOrder: Root - Left - Right.
-add method: add a value to the tree
-contains method: return true if the tree contain the value.
+* Class Node
+* Class BinaryTree
+  * Method inOrder (Takes the root) : Recursion O(n) traverses using the InOrder method.
+  * Method preOrder (Takes the root) : Recursion O(n) traverses using the PreOrder method.
+  * Method postOrder (Takes the root) : Recursion O(n) traverses using the PostOrder method.
+* Class BinarySearchTree
+  * Method add(data) : Iterativly adds an element to the right position O(n).
+  * Method contains(key) : Iterativly searches an element exists to the right position O(n).
 
-## FindMaxValue
-### Challenge Summary
-Find the max value in the tree
-- Challenge Description
-Write an instance method called find-maximum-value that return the maximum value stored in the tree.
 
-### Approach & Efficiency
-Create a findMaximum Value Function -check if we have a value in the root
-use postOrder method to get the values from the tree
-for loob to find the ma value after check
-return the max value
-- Big O:
-- Time: O(n)
-- space: O(n)
-
-<img src="./trees/cc16.png" />
+## WhiteBoard
+<img src="./trees/cc18.png" />
